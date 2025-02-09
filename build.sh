@@ -4,7 +4,7 @@
 # Copyright (C) 2020-2021 Adithya R.
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="Linux-$(date '+%Y%m%d-%H%M')-spes.zip"
+ZIPNAME="Linux-suNEXT-$(date '+%Y%m%d-%H%M')-spes.zip"
 TC_DIR="$(pwd)/tc/zyc20clang"
 AK3_DIR="$(pwd)/android/AnyKernel3"
 DEFCONFIG="vendor/spes-perf_defconfig"
@@ -63,7 +63,7 @@ if [ -f "$kernel" ]; then
 	echo -e "\nKernel compiled succesfully! Zipping up...\n"
 	if [ -d "$AK3_DIR" ]; then
 		cp -r $AK3_DIR AnyKernel3
-	elif ! git clone -q https://github.com/CHRISL7/AnyKernel3 -b master; then
+	elif ! git clone -q https://github.com/spes-development/AnyKernel3 -b Linux-suNEXT; then
 		echo -e "\nAnyKernel3 repo not found locally and couldn't clone from GitHub! Aborting..."
 		exit 1
 	fi

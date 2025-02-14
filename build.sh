@@ -18,6 +18,9 @@ export PATH="$TC_DIR/bin:$PATH"
 export KBUILD_BUILD_USER=nobody
 export KBUILD_BUILD_HOST=android-build
 
+git submodule init
+git submodule update
+
 if ! [ -d "$TC_DIR" ]; then
     mkdir -p "$TC_DIR"
     echo "ZyC clang not found! Downloading to $TC_DIR..."
